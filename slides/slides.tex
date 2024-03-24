@@ -1,0 +1,78 @@
+\documentclass[aspectratio=169]{beamer}
+% remove aspectratio=169 for the standard 4:3 layout
+
+% use the metropolis theme
+\usetheme[progressbar=head]{metropolis}
+% see metropolis package for more options
+% dark theme must be set after the metroepfl package is loaded (see below)
+
+% use the epfl color theme
+% defines epfl{gray,darkgray,lightgray,red,blue}
+% this usepackage is optional, as it is also done by metroepfl
+\usepackage{epflcolors}
+% metropolis theme based on gemini and epflcolors
+\usepackage{metroepfl}
+% \metroset{background=dark}
+% multimedia for video/audio
+\usepackage{multimedia}
+% lilypond (staffsize corrected for beamer document size
+\usepackage[staffsize=17]{lyluatex}
+
+\title{Test Slides}
+\subtitle{Just for testing the theme}
+\author{Max Mustermensch}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{First Frame}
+  \begin{itemize}
+  \item text
+  \item \alert{alert text}
+  \end{itemize}
+  \begin{block}{A Block}
+    with some content
+  \end{block}
+  \begin{exampleblock}{Example}
+    This is an example
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[standout]
+  Really Important Message!
+\end{frame}
+
+\begin{frame}{Audio example}
+  The \texttt{multimedia} package is part of beamer and described in the \href{https://ctan.org/pkg/beamer}{\alert{beamer docs}}, Chapter 14.
+  Media files are \alert{not} embedded into the PDF and must be kept alongside with the document.
+
+  To include audio (with controls) use the \texttt{movie} command with an audio file (ideally some common format):\\
+  \movie[showcontrols,width=10em,height=1em]{\includegraphics[height=1em]{figures/play.pdf}}{example_audio.flac}
+
+  Some PDF viewers (e.g. \href{https://pdfpc.github.io/}{\texttt{pdfpc}}) work better with a video video file,
+  otherwise they won't show controls:\\
+  \movie[showcontrols,width=10em,height=1em]{\includegraphics[height=1em]{figures/play.pdf}}{example_video.ogv}
+\end{frame}
+
+\begin{frame}[fragile]{Lilypond Example}
+  You can use \href{https://github.com/jperon/lyluatex}{\texttt{lyluatex}} with LuaTeX
+  to typeset lilypond directly in a document.
+  This requires lilypond to be installed and doesn't work on Overleaf.
+
+  To use literal lilypond code in beamer, add \texttt{fragile} to the frame.
+
+  \begin{lilypond}
+    \relative c' { bes a c b }
+  \end{lilypond}
+
+  Including a lilypond file doesn't require the \texttt{fragile} option.
+
+  \lilypondfile{figures/allemande.ly}
+\end{frame}
+
+\end{document}
+% Local Variables:
+% TeX-engine: luatex
+% TeX-command-extra-options: "-shell-escape"
+% End:

@@ -1,0 +1,36 @@
+% modifications to the metropolis beamer theme
+
+\RequirePackage{epflcolors}
+
+% epfl color scheme
+\renewcommand{\metropolis@colors@dark}{
+  \setbeamercolor{normal text}{fg=white,bg=epfldark}
+  \setbeamercolor{frametitle}{fg=white,bg=epfldark}
+  \usebeamercolor[fg]{normal text}
+}
+\renewcommand{\metropolis@colors@light}{
+  \setbeamercolor{normal text}{fg=epfldark,bg=white}
+  \setbeamercolor{frametitle}{fg=black,bg=epfllight}
+}
+
+\setbeamercolor{normal text}{fg=epfldark, bg=white}
+\setbeamercolor{alerted text}{fg=epflred}
+\setbeamercolor{example text}{fg=epflgreen}
+\setbeamercolor{frametitle}{fg=black,bg=epfllight}
+
+% set fonts (as in the gemini theme)
+\setsansfont{Lato}[
+  UprightFont=*-Light,
+  ItalicFont=*-LightItalic,
+  BoldFont=*-Regular,
+  BoldItalicFont=*-Italic
+  ]
+
+\newfontfamily\Raleway{Raleway}
+\setbeamerfont{frametitle}{family=\Raleway,series=\mdseries}
+\setbeamerfont{headline}{family=\Raleway}
+\setbeamerfont{title}{family=\Raleway}
+\setbeamerfont{subtitle}{family=\Raleway}
+\setbeamerfont{author}{family=\Raleway}
+\setbeamerfont{date}{family=\Raleway}
+\setbeamerfont{block title}{family=\Raleway}
